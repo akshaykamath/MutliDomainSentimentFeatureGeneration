@@ -1,0 +1,5 @@
+Replaced all & with &amp;
+Replaced all ' with &apos;
+Replaced all " with &quot;
+Replaced all  with
+Replaced </span> with
