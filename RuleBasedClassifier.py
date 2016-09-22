@@ -4,6 +4,8 @@ import sys
 from BinarySentimentClassifier import BinarySentiment
 from nltk.tokenize import WhitespaceTokenizer
 from nltk.tokenize import TweetTokenizer
+from nltk.corpus import stopwords
+import nltk
 
 reload(sys)
 
@@ -38,6 +40,11 @@ class RuleBasedSentimentClassifier:
     def get_text_score(self, sentence):
         sentence = sentence.lower()
         tokens = self.tokenizer.tokenize(sentence)
+
+        #filtered_tokens = [token for token in tokens if token not in set(stopwords.words('english'))]
+        #tagged_words = nltk.pos_tag(filtered_tokens)
+
+        #filtered_words = [word[0] for word in tagged_words if word[1] == "JJ" or word[1] == "RB"]
 
         sentiment_score = 0
         for token in tokens:
